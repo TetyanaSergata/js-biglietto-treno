@@ -22,3 +22,27 @@ var etaPasseggero = parseInt(prompt("Inserisci l'età"));
 console.log(etaPasseggero);
 
 // 3. Costo del biglietto è di 0.21 € al km;
+var costoChilometro = 0.21;
+console.log(costoChilometro);
+
+// Costo totale del viaggio
+var costoViaggio = numeroChilometri * costoChilometro;
+console.log(costoViaggio);
+
+if (etaPasseggero < 18){
+  var scontoPercentuale = 20;
+  console.log(scontoPercentuale);
+  var calcoloSconto = (costoViaggio * scontoPercentuale / 100);
+  console.log(calcoloSconto);
+  var costoFinale = costoViaggio - calcoloSconto;
+  console.log(costoFinale);
+} else if (etaPasseggero > 65){
+  var scontoPercentuale = 40;
+  console.log(scontoPercentuale);
+  var calcoloSconto = (costoViaggio * scontoPercentuale / 100);
+  console.log(calcoloSconto);
+  var costoFinale = costoViaggio - calcoloSconto;
+  console.log(costoFinale);
+} else (etaPasseggero >= 18){
+  console.log(costoViaggio);
+}

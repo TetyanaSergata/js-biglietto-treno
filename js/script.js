@@ -29,6 +29,7 @@ console.log(costoChilometro);
 var costoViaggio = numeroChilometri * costoChilometro;
 console.log(costoViaggio);
 
+// Calcolo Sconto
 if (etaPasseggero < 18){
   var scontoPercentuale = 20;
   console.log(scontoPercentuale);
@@ -43,6 +44,11 @@ if (etaPasseggero < 18){
   console.log(calcoloSconto);
   var costoFinale = costoViaggio - calcoloSconto;
   console.log(costoFinale);
-} else (etaPasseggero >= 18){
-  console.log(costoViaggio);
 }
+// } else (etaPasseggero >= 18){
+//   console.log(costoViaggio);
+// }
+
+// Visualizzazione in html
+document.getElementById('ticket').innerHTML = costoViaggio;
+document.getElementById('ticket').innerHTML = costoFinale;

@@ -35,7 +35,7 @@ if (etaPasseggero < 18){
   console.log(scontoPercentuale);
   var calcoloSconto = (costoViaggio * scontoPercentuale / 100);
   console.log(calcoloSconto);
-  var costoFinale = costoViaggio - calcoloSconto;
+  var costoFinale = Math.floor(costoViaggio - calcoloSconto);
   console.log(costoFinale);
 } else if (etaPasseggero > 65){
   var scontoPercentuale = 40;
@@ -44,10 +44,10 @@ if (etaPasseggero < 18){
   console.log(calcoloSconto);
   var costoFinale = costoViaggio - calcoloSconto;
   console.log(costoFinale);
+} else (etaPasseggero >= 18){
+  console.log(costoViaggio);
 }
-// } else (etaPasseggero >= 18){
-//   console.log(costoViaggio);
-// }
+
 
 // Visualizzazione in html
 document.getElementById('ticket').innerHTML = costoViaggio;

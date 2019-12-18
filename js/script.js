@@ -13,49 +13,39 @@
 // Controllo
 // alert('ciao');
 
-// 1. Chiediamo all’utente il numero di chilometri che vuole percorrere;
+// Chiediamo all’utente il numero di chilometri che vuole percorrere;
 var numeroChilometri = parseInt(prompt('Inserisci il numero di chilometri da percorrere'));
 console.log(numeroChilometri);
 
-// 2. Chiediamo l’età del passeggero;
+// Chiediamo l’età del passeggero;
 var etaPasseggero = parseInt(prompt("Inserisci l'età"));
 console.log(etaPasseggero);
 
-// 3. Costo del biglietto è di 0.21 € al km;
+// Costo del biglietto è di 0.21 € al km;
 var costoChilometro = 0.21;
 console.log(costoChilometro);
 
 // Costo totale del viaggio
-var costoViaggio = Math.floor(numeroChilometri * costoChilometro);
+var costoViaggio = numeroChilometri * costoChilometro;
 console.log(costoViaggio);
 
-// Calcolo Sconto
+// Percentuale sconto in base all'età
 if (etaPasseggero < 18){
-  var scontoPercentuale = 20;
-  console.log(scontoPercentuale);
-  var calcoloSconto = (costoViaggio * scontoPercentuale / 100);
-  console.log(calcoloSconto);
-  var costoFinale = Math.floor(costoViaggio - calcoloSconto);
-  console.log(costoFinale);
-  // Visualizzazione in html
-  document.getElementById('ticket').innerHTML = costoFinale;
+    var scontoPercentuale = 20;
 } else if (etaPasseggero > 65){
-  var scontoPercentuale = 40;
-  console.log(scontoPercentuale);
-  var calcoloSconto = (costoViaggio * scontoPercentuale / 100);
-  console.log(calcoloSconto);
-  var costoFinale = Math.floor(costoViaggio - calcoloSconto);
-  console.log(costoFinale);
-  // Visualizzazione in html
-  document.getElementById('ticket').innerHTML = costoFinale;
+    var scontoPercentuale = 40;
 } else {
-  var costoViaggio = Math.floor(numeroChilometri * costoChilometro);
-  console.log(costoViaggio);
-  // Visualizzazione in html
-  document.getElementById('ticket').innerHTML = costoViaggio;
+    var scontoPercentuale = 0;
 }
+console.log(scontoPercentuale);
 
+//Calcolo dello sconto
+var calcoloSconto = costoViaggio * scontoPercentuale / 100;
+console.log(calcoloSconto);
 
-// Visualizzazione in html
-// document.getElementById('ticket-adulto').innerHTML = costoViaggio;
-// document.getElementById('ticket').innerHTML = costoFinale;
+// Costo finale
+var costoFinale = costoViaggio - calcoloSconto;
+console.log(costoFinale);
+
+//Visualizzazine in html
+document.getElementById('ticket').innerHTML = costoFinale;

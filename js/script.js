@@ -37,6 +37,8 @@ if (etaPasseggero < 18){
   console.log(calcoloSconto);
   var costoFinale = Math.floor(costoViaggio - calcoloSconto);
   console.log(costoFinale);
+  // Visualizzazione in html
+  document.getElementById('ticket').innerHTML = costoFinale;
 } else if (etaPasseggero > 65){
   var scontoPercentuale = 40;
   console.log(scontoPercentuale);
@@ -44,12 +46,16 @@ if (etaPasseggero < 18){
   console.log(calcoloSconto);
   var costoFinale = Math.floor(costoViaggio - calcoloSconto);
   console.log(costoFinale);
+  // Visualizzazione in html
+  document.getElementById('ticket').innerHTML = costoFinale;
 } else {
   var costoViaggio = Math.floor(numeroChilometri * costoChilometro);
   console.log(costoViaggio);
+  // Visualizzazione in html
+  document.getElementById('ticket').innerHTML = costoViaggio;
 }
 
 
 // Visualizzazione in html
-document.getElementById('ticket').innerHTML = costoViaggio;
-document.getElementById('ticket').innerHTML = costoFinale;
+// document.getElementById('ticket-adulto').innerHTML = costoViaggio;
+// document.getElementById('ticket').innerHTML = costoFinale;
